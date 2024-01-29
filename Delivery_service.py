@@ -2,6 +2,14 @@
 
 
 def get_min_number_platforms(array_weights: str, weight_limit: str) -> int:
+    """Алгоритм определяет минимальное количество транспортных платформ,
+необходимое для перевозки всех роботов, описанных в массиве array_weights.
+- Количество платформ неограниченно.
+- Каждая платформа выдерживает максимальный вес weight_limit.
+- На каждой платформе можно перевезти не более двух роботов при условии,
+что их совокупный вес не превышает weight_limit.
+- Вес отдельного робота не может превышать weight_limit.
+"""
     limit: int = int(weight_limit)
     weights: list[int] = [int(weight) for weight in array_weights.split()]
     weights.sort()
@@ -22,6 +30,4 @@ def get_min_number_platforms(array_weights: str, weight_limit: str) -> int:
 
 
 if __name__ == '__main__':
-    weights = input()
-    limit = input()
-    print(get_min_number_platforms(weights, limit))
+    print(get_min_number_platforms(input(), input()))
